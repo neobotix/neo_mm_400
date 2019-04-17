@@ -1,0 +1,7 @@
+<!-- main IMU launch file -->
+
+<launch>
+
+  <include file="$(find neo_mm_400)/configs/imu/phidgets/phidgets_imu.launch"/>
+
+</launch>

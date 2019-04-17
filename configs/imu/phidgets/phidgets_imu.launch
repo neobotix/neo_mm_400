@@ -1,0 +1,29 @@
+<!-- Phidgets IMU launch file -->
+
+<launch>
+
+  #### Nodelet manager ######################################################
+
+  <node pkg="nodelet" type="nodelet" name="imu_manager" 
+    args="manager" output="screen" />
+
+  #### IMU Driver ###########################################################
+
+  <node pkg="nodelet" type="nodelet" name="PhidgetsImuNodelet" 
+    args="load phidgets_imu/PhidgetsImuNodelet imu_manager" 
+    output="screen">
+
+	<rosparam file="$(find neo_mm_400)/configs/imu/phidgets/phidgets_imu.yaml" command="load" />
+  </node>
+
+  #### IMU Orientation Filter ###############################################
+
+  <node pkg="nodelet" type="nodelet" name="ImuFilterNodelet" 
+    args="load imu_filter_madgwick/ImuFilterNodelet imu_manager" 
+    output="screen">
+
+    <param name="use_mag" value="true"/>
+    <param name="use_magnetic_field_msg" value="true"/>
+  </node>
+
+</launch>

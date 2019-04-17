@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+
+        <include file="$(find neo_mm_400)/configs/navigation/gmapping/gmapping_basic.launch"/>
+        <include file="$(find neo_mm_400)/configs/navigation/move_base/move_base.launch"/>
+
+</launch>

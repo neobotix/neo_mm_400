@@ -1,0 +1,25 @@
+#frame
+frame_id: imu_1_link
+# supported data rates: 4 8 16 24 32 40 ... 1000 (in ms)
+period: 4
+
+# standard deviation
+angular_velocity_stdev: 0.000349056
+linear_acceleration_stdev: 0.002943
+magnetic_field_stdev: 0.001658
+
+# compass correction params (see http://www.phidgets.com/docs/1044_User_Guide)
+cc_mag_field: 0.52859
+cc_offset0: 0.03921
+cc_offset1: 0.19441
+cc_offset2: -0.03493
+cc_gain0: 1.81704
+cc_gain1: 1.81028
+cc_gain2: 2.04819
+cc_t0: 0.00142
+cc_t1: -0.03591
+cc_t2: 0.00160
+cc_t3: -0.05038
+cc_t4: -0.03942
+cc_t5: -0.05673
+
