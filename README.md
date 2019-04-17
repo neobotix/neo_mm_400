@@ -2,7 +2,9 @@
 
 This package contains configuration and launch files for Neobotix MP-400.
 
-The [MM-400](https://www.neobotix-robots.com/mobile-manipulator-mm-400.html) is a small, agile mobile robot for material flow and intralogistics in industrial applications. Automatic charging station and load handling system available.
+The [MM-400](https://www.neobotix-robots.com/mobile-manipulator-mm-400.html) combines the mobile robot MP-400 and a light-weight robot arm from PILZ or Schunk to create a very compact and agile robot system for research applications.
+
+Its small footprint makes the MM-400 perfect for use in narrow environments where other robots cannot navigate. 
 
 # Contact information
 
