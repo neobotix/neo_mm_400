@@ -45,7 +45,7 @@ limitations under the License.
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://neo_simulation/robots/mm_400/meshes/foot.dae" />
+          <mesh filename="package://neo_mm_400/robot_model/mm_400/meshes/foot.dae" />
         </geometry>
       </visual>
 
@@ -79,7 +79,7 @@ limitations under the License.
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://neo_simulation/robots/mm_400/meshes/link_1.dae" />
+          <mesh filename="package://neo_mm_400/robot_model/mm_400/meshes/link_1.dae" />
         </geometry>
       </visual>
 
@@ -123,7 +123,7 @@ limitations under the License.
       <visual name="first">
         <origin xyz="0 0 0" rpy="0 0 -${pi/3}" />
         <geometry>
-          <mesh filename="package://neo_simulation/robots/mm_400/meshes/link_2.dae" />
+          <mesh filename="package://neo_mm_400/robot_model/mm_400/meshes/link_2.dae" />
         </geometry>
       </visual>
 
@@ -162,7 +162,7 @@ limitations under the License.
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${pi}" />
         <geometry>
-          <mesh filename="package://neo_simulation/robots/mm_400/meshes/link_3.dae" />
+          <mesh filename="package://neo_mm_400/robot_model/mm_400/meshes/link_3.dae" />
         </geometry>
       </visual>
 
@@ -206,7 +206,7 @@ limitations under the License.
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://neo_simulation/robots/mm_400/meshes/link_4.dae" />
+          <mesh filename="package://neo_mm_400/robot_model/mm_400/meshes/link_4.dae" />
         </geometry>
       </visual>
 
@@ -245,7 +245,7 @@ limitations under the License.
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://neo_simulation/robots/mm_400/meshes/link_5.dae"/>
+          <mesh filename="package://neo_mm_400/robot_model/mm_400/meshes/link_5.dae"/>
         </geometry>
       </visual>
 
@@ -302,7 +302,7 @@ limitations under the License.
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://neo_simulation/robots/mm_400/meshes/flange.dae"/>
+          <mesh filename="package://neo_mm_400/robot_model/mm_400/meshes/flange.dae"/>
         </geometry>
       </visual>
 
