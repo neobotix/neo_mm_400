@@ -1,6 +1,6 @@
 #######OVERALL FILTER PARAMETER########
 
- min_particles : 200
+ min_particles : 500
 
     #####Minimum allowed number of particles (default:100)
 
@@ -16,11 +16,11 @@
 
     #####Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distrubition will be less than kld_err. 
 
- update_min_d : 0.05 
+ update_min_d : 0.05
 
     #####Translational movement required before performing a filter update. (default:0.2)
 
- update_min_a: 0.05 
+ update_min_a: 0.05
 
     #####Rotational movement required before performing a filter update. 
 
@@ -52,15 +52,15 @@
 
     ####Initial pose mean (yaw), used to initialize filter with Gaussian distribution. 
 
- initial_cov_xx : 0.05*0.05 
+ initial_cov_xx : 0.01 
 
     #####Initial pose covariance (x*x), used to initialize filter with Gaussian distribution. 
 
- initial_cov_yy : 0.05*0.05 
+ initial_cov_yy : 0.01 
 
     #####Initial pose covariance (y*y), used to initialize filter with Gaussian distribution. 
 
- initial_cov_aa : 0.05*0.05
+ initial_cov_aa : 0.01
 
     #####Initial pose covariance (yaw*yaw), used to initialize filter with Gaussian distribution. 
 
@@ -85,15 +85,15 @@
 #######LASER MODEL PARAMETERS#######
 
  
- laser_min_range : 0.1
+ laser_min_range : -1.0
 
     #####Minimum scan range to be considered; -1.0 will cause the laser's reported minimum range to be used. 
 
- laser_max_range : 20
+ laser_max_range : -1.0
 
     #####Maximum scan range to be considered; -1.0 will cause the laser's reported maximum range to be used. 
 
- laser_max_beams : 120
+ laser_max_beams : 200
 
     #####How many evenly-spaced beams in each scan to be used when updating the filter. (Default:30)
 
@@ -130,29 +130,29 @@
     #####Which model to use, either beam, likelihood_field, or likelihood_field_prob (same as likelihood_field but incorporates the beamskip feature, if enabled).
 
 
-#######ODOMETRY MODEL PARAMETRS#######
+#######ODOMETRY MODEL PARAMETRS####### 
 
  odom_model_type : diff-corrected
 
     #####Which model to use, either "diff", "omni", "diff-corrected" or "omni-corrected". 
 
- odom_alpha1 : 0.2
+ odom_alpha1 : 0.1
 
     #####Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion. 
 
- #odom_alpha2 : 0.2
+ #odom_alpha2 : 0.1
 
     #####Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion. 
 
- odom_alpha3 : 0.2
+ odom_alpha3 : 0.1
 
     #####Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion. 
 
- #odom_alpha4 : 0.2
+ #odom_alpha4 : 0.1
 
     #####Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion. 
 
- #odom_alpha5 : 0.2
+ #odom_alpha5 : 0.1
 
     #####Translation-related noise parameter (only used if model is "omni"). 
 
