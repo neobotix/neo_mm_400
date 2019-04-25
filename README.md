@@ -1,5 +1,9 @@
 # ROS configuration and launch files for Neobotix MM-400
 
+<p align="center">
+  <img src="https://github.com/neobotix/neo_mm_400/blob/master/MM400.png">
+</p>
+
 This package contains configuration and launch files for Neobotix MP-400.
 
 The [MM-400](https://www.neobotix-robots.com/mobile-manipulator-mm-400.html) combines the mobile robot MP-400 and a light-weight robot arm from PILZ or Schunk to create a very compact and agile robot system for research applications.
