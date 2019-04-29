@@ -1,7 +1,7 @@
 # ROS configuration and launch files for Neobotix MM-400
 
 <p align="center">
-  <img src="https://github.com/neobotix/neo_mm_400/blob/master/MM400.png">
+  <img src="https://github.com/neobotix/neo_mm_400/blob/master/MM400.png"  width=100>
 </p>
 
 This package contains configuration and launch files for Neobotix MP-400.
