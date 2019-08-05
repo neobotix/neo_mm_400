@@ -23,9 +23,6 @@
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
 		<param name="use_gui" value="false" />
 	</node>
-	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-
-	<!--auto_recover-->
-	<include file="$(find neo_mm_400)/configs/auto_recover/auto_recover.launch"/>			
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />	
 
 </launch>

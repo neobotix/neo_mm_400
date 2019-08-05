@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /TF1
+        - /FrontLaserScan1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 775
@@ -65,6 +65,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        cabinet_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         fixed_wheel_left_link:
           Alpha: 1
           Show Axes: false
@@ -75,11 +79,54 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        laser_1_link:
+        lidar_1_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        pilzbase:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        pilzbase_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pilzflange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pilzlink_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pilzlink_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pilzlink_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pilzlink_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pilzlink_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pilztool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         wheel_back_left_link:
           Alpha: 1
           Show Axes: false
@@ -131,41 +178,11 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.0500000007
       Style: Boxes
-      Topic: /laser_1/scan_filtered
+      Topic: /lidar_1/scan_filtered
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/LaserScan
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 0
-      Enabled: false
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 8192
-      Min Color: 0; 0; 0
-      Min Intensity: 0
-      Name: BackLaserScan
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.0500000007
-      Style: Flat Squares
-      Topic: /sick_s300_back/scan_filtered
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: false
     - Alpha: 0.699999988
       Class: rviz/Map
       Color Scheme: costmap
@@ -176,36 +193,6 @@ Visualization Manager:
       Unreliable: false
       Use Timestamp: false
       Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/LaserScan
-      Color: 85; 170; 0
-      Color Transformer: FlatColor
-      Decay Time: 0
-      Enabled: false
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 8192
-      Min Color: 0; 0; 0
-      Min Intensity: 0
-      Name: UnifiedLaserScan
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.0199999996
-      Style: Flat Squares
-      Topic: /cob_scan_unifier/scan_unified
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: false
     - Alpha: 0.699999988
       Class: rviz/Map
       Color Scheme: map
@@ -217,98 +204,24 @@ Visualization Manager:
       Use Timestamp: false
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_link:
-          Value: true
-        fixed_wheel_left_link:
-          Value: true
-        fixed_wheel_right_link:
-          Value: true
-        laser_1_link:
-          Value: true
-        map:
-          Value: true
-        odom:
-          Value: true
-        wheel_back_left_link:
-          Value: true
-        wheel_back_right_link:
-          Value: true
-        wheel_front_left_link:
-          Value: true
-        wheel_front_right_link:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          odom:
-            base_link:
-              fixed_wheel_left_link:
-                {}
-              fixed_wheel_right_link:
-                {}
-              laser_1_link:
-                {}
-              wheel_back_left_link:
-                {}
-              wheel_back_right_link:
-                {}
-              wheel_front_left_link:
-                {}
-              wheel_front_right_link:
-                {}
+        {}
       Update Interval: 0
-      Value: true
-    - Alpha: 1
-      Axes Length: 1
-      Axes Radius: 0.100000001
-      Class: rviz/Pose
-      Color: 255; 25; 0
-      Enabled: true
-      Head Length: 0.300000012
-      Head Radius: 0.100000001
-      Name: Pose
-      Shaft Length: 1
-      Shaft Radius: 0.0500000007
-      Shape: Arrow
-      Topic: /goal_pose
-      Unreliable: false
-      Value: true
-    - Alpha: 1
-      Buffer Length: 1
-      Class: rviz/Path
-      Color: 25; 255; 0
-      Enabled: true
-      Head Diameter: 0.300000012
-      Head Length: 0.200000003
-      Length: 0.300000012
-      Line Style: Lines
-      Line Width: 0.0299999993
-      Name: Path
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Pose Color: 255; 85; 255
-      Pose Style: None
-      Radius: 0.0299999993
-      Shaft Diameter: 0.100000001
-      Shaft Length: 0.100000001
-      Topic: /move_base/NavfnROS/plan
-      Unreliable: false
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 59; 60; 51
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -329,7 +242,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.36591721
+      Distance: 5.54416561
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -344,10 +257,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.28979647
+      Pitch: 1.01479602
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.8073411
+      Yaw: 1.58235061
     Saved: ~
 Window Geometry:
   Displays:

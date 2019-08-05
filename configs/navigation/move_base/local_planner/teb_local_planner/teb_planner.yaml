@@ -32,10 +32,10 @@ TebLocalPlannerROS:
 ############################
 ###Type Line
 ############################
- footprint_model/line_start: [-0.4, 0.0] 
+ footprint_model/line_start: [-0.3, 0.0] 
  #This parameter is only relevant for type "line". It contains the start coordinates of the line segment. 
 
- footprint_model/line_end: [0.4, 0.0]
+ footprint_model/line_end: [0.3, 0.0]
  #This parameter is only relevant for type "line". It contains the end coordinates of the line segment.
 
 ############################
@@ -302,7 +302,7 @@ TebLocalPlannerROS:
  odom_topic: odom
  #Topic name of the odometry message, provided by the robot driver or simulator.
 
- map_frame: odom
+ map_frame: map
  #Global planning frame (in case of a static map, this parameter must be usually changed to "/map".
 
 
