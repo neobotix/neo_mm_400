@@ -1,30 +1,60 @@
 <?xml version="1.0"?>
 <!-- Materials -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mm_400">
-    
-<xacro:include filename="$(find neo_mm_400)/robot_model/xacros/mp_400_gazebo.xacro" />
+
+
+<xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_panda/urdf/xacros/mp_400_gazebo.xacro" />
+<!-- MM400 with Panda -->
+<!--++++++++++++++++++++++++++++++base_link++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+<!--++++++++++++++++++++body++++++++++++++++++++++++++++--> 
+
+<xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_panda/urdf/xacros/mp_400_body.xacro" />
+
+<!--+++++++++++++++++++castor_wheel_link++++++++++++++++++++++++--> 
+<xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_panda/urdf/xacros/mp_400_caster_wheel.xacro" />
+
+<!--+++++++++++++++++++left_wheel_link++++++++++++++++++++++++--> 
+<xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_panda/urdf/xacros/mp_400_fixed_wheel_left.xacro" />
+
+<!--+++++++++++++++++++right_wheel_link++++++++++++++++++++++++--> 
+<xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_panda/urdf/xacros/mp_400_fixed_wheel_right.xacro" />
+
+<!--+++++++++++++++++++cabinet++++++++++++++++++++++++--> 
+<xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_panda/urdf/xacros/cabinet.xacro" />
+
+ <!-- SENSORS --> 
+<xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_panda/urdf/xacros/sick_laser.xacro" />
+
+<!-- Panda -->
+<xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_panda/urdf/panda_arm.xacro" />
+
+<!-- MM400 with pilz -->
+<!-- <xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_pilz/urdf/xacros/mp_400_gazebo.xacro" /> -->
 
 <!--++++++++++++++++++++++++++++++base_link++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
 <!--++++++++++++++++++++body++++++++++++++++++++++++++++--> 
 
-<xacro:include filename="$(find neo_mm_400)/robot_model/urdf/xacros/mp_400_body.xacro" />
+<!-- <xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_pilz/urdf/xacros/mp_400_body.xacro" /> -->
 
 <!--+++++++++++++++++++castor_wheel_link++++++++++++++++++++++++--> 
-<xacro:include filename="$(find neo_mm_400)/robot_model/urdf/xacros/mp_400_caster_wheel.xacro" />
+<!-- <xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_pilz/urdf/xacros/mp_400_caster_wheel.xacro" /> -->
 
 <!--+++++++++++++++++++left_wheel_link++++++++++++++++++++++++--> 
-<xacro:include filename="$(find neo_mm_400)/robot_model/urdf/xacros/mp_400_fixed_wheel_left.xacro" />
+<!-- <xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_pilz/urdf/xacros/mp_400_fixed_wheel_left.xacro" /> -->
 
 <!--+++++++++++++++++++right_wheel_link++++++++++++++++++++++++--> 
-<xacro:include filename="$(find neo_mm_400)/robot_model/urdf/xacros/mp_400_fixed_wheel_right.xacro" />
+<!-- <xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_pilz/urdf/xacros/mp_400_fixed_wheel_right.xacro" /> -->
 
 <!--+++++++++++++++++++cabinet++++++++++++++++++++++++--> 
-<xacro:include filename="$(find neo_mm_400)/robot_model/urdf/xacros/cabinet.xacro" />
-
-<xacro:include filename="$(find neo_mm_400)/robot_model/urdf/prbt_macro.xacro" />
+<!-- <xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_pilz/urdf/xacros/cabinet.xacro" /> -->
 
  <!-- SENSORS --> 
-<xacro:include filename="$(find neo_mm_400)/robot_model/urdf/xacros/sick_laser.xacro" />
+<!-- <xacro:include filename="$(find neo_mm_400)/robot_model/mm_400_pilz/urdf/xacros/sick_laser.xacro" /> -->
+
+  <!-- <xacro:include filename="$(find neo_simulation)/robots/mm_400/urdf/prbt_macro.xacro" /> -->
+<!-- Gripper -->
+<!-- <xacro:include filename="$(find schunk_description)/pg70.urdf.xacro" /> -->
+
 
   <xacro:mp_400_base name="base_link">
   </xacro:mp_400_base>
@@ -59,11 +89,19 @@
   </xacro:mm_400_cabinet>
 
    <!-- Robot arm -->
-  <xacro:prbt parent="cabinet_link" prefix="pilz">
+   <!-- Pilz -->
+<!--   <xacro:prbt parent="cabinet_link" prefix="pilz">
     <origin xyz="0 0 0." rpy="0 0 0" />
-  </xacro:prbt>
+  </xacro:prbt> -->
 
+<!-- Panda -->
+  <xacro:panda_arm parent="cabinet_link" prefix="panda">
+    <origin xyz="0 0 0." rpy="0 0 0" />
+  </xacro:panda_arm>
 
+<!--   <xacro:pg70 parent="pilztool0">
+    <origin xyz="0 0 0." rpy="0 0 0" />
+  </xacro:pg70> -->
   <!--+++++++++++++++++++laserscanner_link++++++++++++++++++++++++-->
 
   <xacro:sick_laser_v0 name="laser_1" parent="base_link" ros_topic="laser_1/scan">
